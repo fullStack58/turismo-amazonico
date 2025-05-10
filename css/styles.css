@@ -1,0 +1,1050 @@
+/* ------------------------------------------------------------------------ 
+                                 Fuentes 
+------------------------------------------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+/* ------------------------------------------------------------------------ 
+                                 Documento 
+Clases que afectaran la apariencia de toda la página
+------------------------------------------------------------------------ */
+/* Usamos el selector universal para aplicar cambios generales a la pagina web */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.body {
+    background-color: #315da8;
+    opacity: 1;
+    background-image: radial-gradient(
+            #94bbb1 1.6500000000000001px,
+            transparent 1.6500000000000001px
+        ),
+        radial-gradient(
+            #94bbb1 1.6500000000000001px,
+            #192c2f 1.6500000000000001px
+        );
+    background-size: 66px 66px;
+    background-position: 0 0, 33px 33px;
+    min-width: 530px;
+}
+
+/*selecciona el elemento raíz de un árbol que 
+representa el documento.
+Esto es útil si se quieren almacenar variables
+o algún otro elemento para promover la 
+recursividad*/
+:root {
+    /*Imágenes que utiliza el contenedor de la sección (actividades disponibles)
+    para los elementos que componen la imagen de la introducción.
+    Cada cierto tiempo se muestra una imágen de estas */
+    --img-1: url("../img/secciones/frame1.jpg");
+    --img-2: url("../img/secciones/frame2.jpg");
+    --img-3: url("../img/secciones/frame3.jpg");
+    --img2-1: url("../img/secciones/frame4.jpg");
+    --img2-2: url("../img/secciones/frame2.jpg");
+    --img2-3: url("../img/secciones/frame6.jpg");
+}
+
+/* ------------------------------------------------------------------------ 
+                                 Navbar 
+------------------------------------------------------------------------ */
+/* Cambiar las propiedades del navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /*Ocupar el 100% del ancho de la ventana*/
+    padding: 1rem 1rem; /* Espacios internos (superior e izquierda)*/
+    z-index: 100; /* Sobreponer el Navbar por encima de todos los elementos*/
+    background-color: transparent;
+}
+
+/* Cambiar el color del texto del navbar */
+.navbar .nav-link {
+    color: #ffffff;
+}
+
+/* Cambiar el color del texto cuando el mouse pasa sobre un enlace */
+.navbar .nav-link:hover {
+    color: #648997;
+}
+
+/* Cambiar el color del texto del enlace activo */
+.navbar .nav-link.active {
+    color: #f89138;
+}
+
+/* Cambiar el color del icono del botón de toggler (para dispositivos móviles) */
+.navbar .navbar-toggler {
+    border-color: #ecf0f1; /* Cambiar el color del borde del toggler */
+}
+
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Cambiar el estilo del brand (nombre de la marca) */
+.navbar .navbar-brand {
+    color: #ffffff; /* Un color amarillo */
+    font-size: 1.5rem; /* Cambiar el tamaño de la fuente */
+}
+
+.navbar .navbar-brand:hover {
+    color: #ff7e27;
+}
+
+/* ------------------------------------------------------------------------ 
+                                 Footer 
+------------------------------------------------------------------------ */
+
+/*Cambiar fondo y padding*/
+.footer {
+    box-shadow: rgb(14 93 67) 0px 10px 36px 0px,
+        rgb(7 32 45 / 67%) 0px 0px 0px 1px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    background-image: linear-gradient(
+        to right top,
+        #0b182a,
+        #161c2a,
+        #1e2029,
+        #242429,
+        #292929
+    );
+}
+
+/*Cambiar fuentes h5*/
+.footer h5 {
+    color: #d6d6d6;
+}
+
+/* redes sociales*/
+.footer___social img {
+    transition: ease-out 0.4s;
+    scale: 1;
+    width: 40px;
+    margin-left: 10px;
+}
+
+/* redes sociales*/
+.footer___social img:hover {
+    transition: ease-in-out 0.4s;
+    scale: 0.8;
+}
+
+/* ------------------------------------------------------------------------ 
+                            Parallax (header)
+------------------------------------------------------------------------ */
+/* Cambiar la apariencia del header  */
+header {
+    width: 100%; /* Usa el 100% de la ventana */
+    height: 100vh;
+    position: relative; /*Establece una posición relativa (responsive)*/
+    overflow: hidden; /* Evita que las imágenes del header que componen el Parallax, se desborden a lo ancho de la página*/
+}
+
+@media (max-width: 320px) {
+    header {
+        height: 180vh;
+    }
+}
+@media (min-width: 321px) and (max-width: 425px) {
+    header {
+        height: 140vh;
+    }
+}
+
+/*Ajustamos la imágen "mountain1" del parallax*/
+.mountain1 {
+    position: absolute;
+    bottom: -100px; /* Posición inferior*/
+    width: 1500px;
+    right: 0; /* Desplazamos la imágen hacia la izquierda para que se visualice correctamente*/
+    z-index: 19; /* Funciona como una capa. Permite que la imagen se sobreponga por debajo o encima de otras imágenes, según su eje Z*/
+}
+
+/*Ajustamos la imágen "person" del parallax*/
+.person {
+    position: absolute; /**/
+    width: 650px;
+    bottom: -100px;
+    left: -70px;
+    z-index: 20;
+}
+
+/*Ajustamos la imágen "mountain2" del parallax*/
+.mountain2 {
+    position: absolute;
+    width: 1100px;
+    bottom: -100px;
+    left: 0px;
+    z-index: 18;
+}
+
+/*Ajustamos la imágen "mountain3" del parallax*/
+.mountain3 {
+    position: absolute;
+    width: 900px;
+    bottom: 150px;
+    right: 0;
+    z-index: 17;
+}
+
+/*Ajustamos la imágen "sky" (cielo)  del parallax*/
+.sky {
+    position: absolute;
+    width: 2100px;
+    bottom: 250px;
+    right: 0;
+}
+
+/*Ajustamos el título grande*/
+.big-title {
+    position: absolute;
+    z-index: 30;
+    line-height: 4rem;
+
+    /*ajusta la posición vertical de un elemento en relación con su contenedor.
+    50%: Coloca el borde superior del elemento en el 50% 
+    de la altura del contenedor. Esto centra el 
+    elemento verticalmente, pero solo su borde superior.
+    - 2rem: Ajusta la posición hacia arriba en 2rem desde esa posición del 50%
+    - calc: permite ajustar con precisión la posición de un elemento. Útil para diseños responsive*/
+    top: calc(50% - 2rem);
+
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* ------------------------------------------------------------------------ 
+                   Sección #1 - Presentación de la página
+------------------------------------------------------------------------ */
+
+.section-presentation-page {
+    height: auto;
+    padding-bottom: 190px;
+    padding-top: 180px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    background-color: #151515;
+    position: relative;
+}
+
+/*Se aplica un selector descendiente para modificar la apariencia de las imágenes que estan dentro de la sección*/
+.section-presentation-page img {
+    width: 100%;
+}
+
+/* Cambiar el color del texto del contenedor que contiene la presentación de la página*/
+.content {
+    color: #fff;
+    transform: translateY(
+        -50
+    ); /*Añade un pequeño efecto al contenido. Este valor sera su posición inicial*/
+}
+
+/*AL igual que el párrafo aplicamos un efecto parallax al imgContainer*/
+.imgContainer {
+    transform: translateY(50px); /* Este valor sera su posición inicial*/
+}
+
+/* Se aplica una sombra para aplicar un efecto visual entre el header y esta sección */
+.shadow {
+    position: absolute;
+    bottom: 100%;
+    height: 300px;
+    width: 100%;
+    left: 0;
+    z-index: 20;
+    background: linear-gradient(to top, #151515, transparent);
+}
+
+/* Cambiar la apariencia del título*/
+.title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .section-presentation-page div.align-items-center {
+        flex-direction: column;
+    }
+}
+/* ------------------------------------------------------------------------ 
+                   Sección #2 - Actividades disponibles
+------------------------------------------------------------------------ */
+.separator___section-activities {
+    background-image: linear-gradient(
+            180deg,
+            rgba(21, 21, 21, 1) 7%,
+            rgba(14, 102, 49, 0.76) 21%,
+            rgba(6, 19, 6, 0.21) 65%,
+            rgba(255, 255, 255, 0.35) 93%,
+            rgba(9, 10, 9, 1) 98%
+        ),
+        url("https://cdn.pixabay.com/photo/2023/09/13/15/41/mountain-8251186_1280.jpg");
+    mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 1) 40%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    mask-size: auto auto;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-activities div.contentBx {
+    top: 90px;
+    left: 0px;
+    margin-left: 0;
+    margin-right: 0px;
+}
+
+.section-activities {
+    scroll-margin-top: 690px; /* Margen adicional del scroll */
+
+    background-image: linear-gradient(
+            184deg,
+            rgba(21, 21, 21, 1) 38%,
+            rgba(20, 20, 20, 0.76) 42%,
+            rgba(0, 0, 0, 0.62) 52%,
+            rgba(38, 29, 29, 0.15) 55%,
+            rgba(0, 0, 0, 0.73) 60%,
+            rgba(9, 10, 9, 1) 68%
+        ),
+        url("../img/fondos/camping2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    padding-top: 60px;
+    padding-bottom: 100px;
+    color: #ffffff; /*Color de texto*/
+}
+
+div.container.card_container-section-activities {
+    max-width: 1000px;
+    padding-left: 100px;
+    padding-right: 100px;
+    transform: translateY(-320px);
+}
+
+.section-activities .card {
+    border-radius: 40px;
+    background-color: #091209;
+    color: #95d9bd;
+}
+
+.section-activities .card img {
+    border-radius: 40px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.container_img-presentation_page {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 30rem;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-size: content;
+    gap: 0.5rem;
+}
+
+.container_img-presentation_page .col_img-presentation_page {
+    width: 100%;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: inherit;
+}
+
+.container_img-presentation_page .col_img-presentation_page .item {
+    width: inherit;
+    border-radius: 0.5rem;
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed;
+    background-size: cover; /* Llenar completamente el contenedor */
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+/*Columna 1*/
+.container_img-presentation_page .col--1 .item--1 {
+    height: 8rem;
+    background-color: red;
+    animation: bg 5s 150ms infinite ease-in-out;
+}
+
+.container_img-presentation_page .col--1 .item--2 {
+    height: 6rem;
+    background-color: blue;
+    animation: bg 5s 274ms infinite ease-in-out;
+}
+
+.container_img-presentation_page .col--1 .item--3 {
+    height: 3rem;
+    background-color: yellow;
+    animation: bg 5s 350ms infinite ease-in-out;
+}
+
+/*Columna 2*/
+.container_img-presentation_page .col--2 .item--1 {
+    height: 10rem;
+    background-color: red;
+    animation: bg 5s 150ms infinite ease-in-out;
+}
+
+.container_img-presentation_page .col--2 .item--2 {
+    height: 9rem;
+    background-color: blue;
+    animation: bg 5s 274ms infinite ease-in-out;
+}
+
+.container_img-presentation_page .col--2 .item--3 {
+    height: 3rem;
+    background-color: yellow;
+    animation: bg 5s 350ms infinite ease-in-out;
+}
+
+/*Columna 3*/
+.container_img-presentation_page .col--3 .item--1 {
+    height: 8rem;
+    background-color: red;
+    animation: bg 5s 150ms infinite ease-in-out;
+}
+
+.container_img-presentation_page .col--3 .item--2 {
+    height: 6rem;
+    background-color: blue;
+    animation: bg 5s 274ms infinite ease-in-out;
+}
+
+.container_img-presentation_page .col--3 .item--3 {
+    height: 3rem;
+    background-color: yellow;
+    animation: bg 5s 350ms infinite ease-in-out;
+}
+
+/* Para pantallas (mínimo 576) */
+@media (min-width: 576px) {
+    /*Animación*/
+    @keyframes bg {
+        0% {
+            background-image: var(--img-1);
+        }
+        30% {
+            background-image: var(--img-1);
+        }
+        33% {
+            background-image: var(--img-2);
+        }
+        63% {
+            background-image: var(--img-2);
+        }
+        66% {
+            background-image: var(--img-3);
+        }
+        96% {
+            background-image: var(--img-3);
+        }
+        100% {
+            background-image: var(--img-1);
+        }
+    }
+}
+
+/* Para pantallas (maximo 575) */
+@media (max-width: 575px) {
+    /*Animación*/
+    @keyframes bg {
+        0% {
+            background-image: var(--img2-1);
+        }
+        30% {
+            background-image: var(--img2-1);
+        }
+        33% {
+            background-image: var(--img2-2);
+        }
+        63% {
+            background-image: var(--img2-2);
+        }
+        66% {
+            background-image: var(--img2-3);
+        }
+        96% {
+            background-image: var(--img2-3);
+        }
+        100% {
+            background-image: var(--img2-1);
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    div.container.card_container-section-activities {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .introduction_section-activities div.align-items-center {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 575px) {
+    div.container.card_container-section-activities {
+        padding: 140px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+    div.container.card_container-section-activities {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+/* ------------------------------------------------------------------------ 
+                   Sección #3 - Galería
+------------------------------------------------------------------------ */
+.separator___section-galery {
+    background-image: linear-gradient(
+            180deg,
+            rgba(9, 10, 9, 1) 7%,
+            rgba(20, 20, 20, 1) 10%,
+            rgba(51, 105, 51, 0.21) 65%,
+            rgba(14, 9, 9, 0.35) 93%,
+            rgba(9, 10, 9, 1) 98%
+        ),
+        url("../img/fondos/selva.jpg");
+    -webkit-mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-size: auto 1400px;
+    mask-repeat: no-repeat;
+
+    mask-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-galery {
+    background-image: linear-gradient(
+            169deg,
+            rgba(9, 10, 9, 1) 42%,
+            rgba(0, 0, 0, 1) 45%,
+            rgba(20, 20, 20, 0.54) 55%,
+            rgba(255, 255, 255, 0.05) 66%,
+            rgba(9, 10, 9, 0.23) 67%,
+            rgba(9, 10, 9, 1) 80%
+        ),
+        url("https://images.unsplash.com/photo-1727621170067-93835ec80018?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    scroll-margin-top: 500px; /* Margen adicional del scroll */
+    background-color: #090a09;
+    padding-top: 60px;
+    padding-bottom: 100px;
+    color: #ffffff; /*Color de texto*/
+    height: calc(100%-140);
+}
+
+/* Estilo para asegurar que las imágenes mantengan sus dimensiones sin alterar el contenedor */
+.gallery-img {
+    width: 200px;
+    height: 200px;
+    scale: 0.8;
+    object-fit: cover; /* Hace que la imagen se recorte para encajar en el contenedor */
+    transition: transform 0.3s, filter 0.3s, box-shadow 0.3s ease-in-out; /* Transición suave */
+    box-shadow: rgba(231, 231, 231, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.gallery-img:hover {
+    filter: brightness(1.2); /* Aumenta el brillo al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow: rgba(25, 209, 71, 0.25) 0px 50px 100px -20px,
+        rgba(38, 238, 88, 0.3) 0px 30px 60px -30px,
+        rgba(30, 243, 215, 0.35) 0px -2px 6px 0px inset;
+}
+
+.gallery-img:not(:hover) {
+    transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out; /* Suaviza la desaparición del box shadow */
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+/* Opcional: ajusta la altura del contenedor para que no cambie */
+.section-galery .container {
+    max-width: 100%; /* Evita que el contenedor cambie de tamaño */
+    /* transform: translateY(-420px); */
+}
+
+@media (max-width: 575px) {
+    .section-galery .container {
+        column-count: 2;
+    }
+}
+
+/* ------------------------------------------------------------------------ 
+                   Sección #4 - Testimonio
+------------------------------------------------------------------------ */
+.separator___section-testimony {
+    background-image: linear-gradient(
+            180deg,
+            rgba(9, 10, 9, 1) 0%,
+            rgba(9, 10, 9, 1) 14%,
+            rgba(9, 10, 9, 0.23) 26%,
+            rgba(9, 10, 9, 0.44) 35%,
+            rgba(9, 10, 9, 1) 81%
+        ),
+        url("https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    -webkit-mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-size: auto 1400px;
+    mask-repeat: no-repeat;
+
+    mask-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-testimony {
+    background-color: #090a09;
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+/* Estilos básicos para las imágenes y las tarjetas de testimonios */
+.testimony-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; /* Hace la imagen circular */
+}
+
+.testimony-card {
+    padding: 20px;
+    border-radius: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #33573e, #0a2f29);
+    display: flex;
+    color: #99d9be;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos dentro de la tarjeta */
+    transition: transform 0.5s; /* Transición suave */
+    min-width: 211px;
+}
+
+.testimony-card:hover {
+    transform: rotateX(15deg) rotateX(5deg); /* Gira la carta en 3D */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Añade sombra para mayor realismo */
+}
+
+.testimony-name {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.testimony-text {
+    font-style: italic;
+    color: #e6e2e2;
+    margin-top: 5px;
+}
+
+/* ------------------------------------------------------------------------ 
+                   Sección #5 - Contacto
+------------------------------------------------------------------------ */
+.separator___section-contact {
+    background-image: linear-gradient(
+            180deg,
+            rgba(9, 10, 9, 1) 0%,
+            rgba(9, 10, 9, 1) 14%,
+            rgba(9, 10, 9, 0.23) 26%,
+            rgba(9, 10, 9, 0.44) 35%,
+            rgba(9, 10, 9, 1) 81%
+        ),
+        url("https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    -webkit-mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-size: auto 1400px;
+    mask-repeat: no-repeat;
+
+    mask-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contact-section {
+    padding: 20px;
+    background-color: #090a09;
+}
+
+.label {
+    color: #d6d6d6;
+}
+
+.contact-section p {
+    color: #d6d6d6;
+}
+
+.contact-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.company-info p,
+.social-media p,
+.social-media ul {
+    margin: 5px 0;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.form-group textarea,
+input {
+    background-color: #2b3130;
+    color: #ffffff;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #363636;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #222222;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #e2e2e2;
+}
+
+/* ------------------------------------------------------------------------ 
+                        Seccion #6 - Grupo
+------------------------------------------------------------------------ */
+.separator___section-grupo {
+    background-image: linear-gradient(
+            180deg,
+            rgba(9, 10, 9, 1) 0%,
+            rgba(9, 10, 9, 1) 14%,
+            rgba(9, 10, 9, 0.23) 26%,
+            rgba(9, 10, 9, 0.44) 35%,
+            rgba(9, 10, 9, 1) 81%
+        ),
+        url("https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    -webkit-mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-size: auto 1400px;
+    mask-repeat: no-repeat;
+
+    mask-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-group {
+    background-color: #090a09;
+}
+
+.section-group .container {
+    transform: translateY(-210px);
+}
+.card-custom {
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.card-custom:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .section-group div.row {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+/* ------------------------------------------------------------------------ 
+                        Seccion #7 - Preguntas
+------------------------------------------------------------------------ */
+
+.separator___section-preguntas {
+    background-image: linear-gradient(
+            180deg,
+            rgba(9, 10, 9, 1) 0%,
+            rgba(9, 10, 9, 1) 14%,
+            rgba(9, 10, 9, 0.23) 26%,
+            rgba(9, 10, 9, 0.44) 35%,
+            rgba(9, 10, 9, 1) 81%
+        ),
+        url("https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    -webkit-mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-image: radial-gradient(
+        circle,
+        rgb(0, 0, 0) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    mask-size: auto 1400px;
+    mask-repeat: no-repeat;
+
+    mask-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.preguntas {
+    background-color: #090a09;
+}
+.preguntas .container {
+    transform: translateY(-210px);
+}
+
+.preguntas .card {
+    background-color: #291e1e; /* Cambia el color de fondo */
+    box-shadow: rgba(15, 15, 13, 0.16) 0px 10px 36px 0px,
+        rgba(58, 53, 53, 0.06) 0px 0px 0px 1px;
+    transition: ease-in-out 0.4s, box-shadow 0.3s;
+    scale: 1;
+    border-radius: 30px;
+}
+
+.preguntas .card:hover {
+    z-index: 100;
+    transition: ease-in-out 0.4s;
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: rgba(153, 255, 170, 0.25) 0px 30px 60px -12px,
+        rgba(140, 255, 155, 0.3) 0px 18px 36px -18px;
+}
+
+.preguntas div.card-body {
+    background-color: rgb(9, 23, 24);
+    color: #ffffff;
+    border-bottom-left-radius: 23px;
+    border-bottom-right-radius: 23px;
+}
+
+.preguntas div.card {
+    background-color: rgb(13, 95, 68);
+}
+
+.preguntas button.faq-title {
+    text-decoration: none;
+    color: #9cf8ec;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.preguntas button.faq-title:hover {
+    color: #2edb96;
+    text-decoration: none;
+}
+
+.faq-title {
+    cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+    .preguntas .container {
+        max-width: 960px;
+    }
+}
+
+/* ------------------------------------------------------------------------ 
+                        Separador de secciones
+------------------------------------------------------------------------ */
+.separator {
+    height: auto;
+    color: #ffffff; /*Color de texto*/
+}
+
+/*Cambiar color del título*/
+.separator h2 {
+    color: rgb(94 213 148);
+    font-size: 45px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.separator p {
+    text-align: center;
+    max-width: 900px;
+}
+
+@media (max-width: 645px) {
+    .separator {
+        padding: 40px;
+        padding-top: 100px;
+    }
+}
+
+@media (min-width: 646px) {
+    .separator {
+        padding: 100px;
+    }
+}
+
+/* ------------------------------------------------------------------------ 
+                                   BOX 
+Contenedores rotables (3d)
+------------------------------------------------------------------------ */
+.box {
+    position: relative;
+    width: auto;
+    height: 300px;
+    /* margin: 60px 0; */
+    /* background: #000; */
+
+    transform-style: preserve-3d;
+}
+
+.box:hover .contentBx {
+    box-shadow: 0 50px 80px rgba(216, 86, 86, 0.2);
+}
+
+.box:hover {
+    z-index: 9999;
+}
+
+.box .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.box .imgBx img {
+    box-shadow: rgba(14, 231, 101, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(11, 19, 16, 0.12) 0px 4px 6px,
+        rgb(30 95 66 / 17%) 0px 12px 13px, rgb(241 255 249 / 9%) 0px -3px 5px;
+}
+
+.box .contentBx {
+    position: absolute;
+    top: 190px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background: #fff;
+    transform: translateZ(20px) scaleY(0);
+    padding: 40px 25px;
+    transform-origin: top;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+
+.box .contentBx p {
+    font-size: 13px;
+}
+
+.box:hover .contentBx {
+    transform: translateZ(50px) scaleY(1);
+}
+
+/* ------------------------------------------------------------------------ 
+                              CARDS (Bootstrap 5)
+------------------------------------------------------------------------ */
+.card {
+    background-color: #291e1e; /* Cambia el color de fondo */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa al hover */
+    transition: ease-in-out 0.4s, box-shadow 0.3s;
+    scale: 1;
+}
+
+.card:hover {
+    transition: ease-in-out 0.4s;
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(20, 26, 23, 0.2); /* Sombra más intensa al hover */
+}

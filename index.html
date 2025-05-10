@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-------------------------------------
+        * Elementos básicos del documento HTML
+        * meta charset="utf-8" (permite la identificación de caracteres especiales)
+        * meta name="viewport" (Permite una correcta visualización (responsive) para dispositivos móviles)
+        * content="width=device-width" (Iguala el ancho del viewport (la parte visible de la página) al ancho del dispositivo en el que se esta viendo la página)
+        -------------------------------------->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Turismo Amazónico</title>
+
+        <!-------------------------------------
+        CSS (ESTILOS)
+        * css/styles.css (hoja de estilos del proyecto para la apariencia de los componentes de la página)
+        * https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css (librería bootstrap 5)
+        -------------------------------------->
+        <link rel="stylesheet" href="css/styles.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+
+        <!-------------------------------------
+        JS (SCRIPTS)
+        * js/vanilla-tilt.js (librería para girar contenedores en 3D)
+        -------------------------------------->
+        <script src="js/vanilla-tilt.js"></script>
+    </head>
+
+    <body class="body">
+        <!--------------------------------------------------------------------------------------------------------------- 
+                                            Cabecera de la página (header) 
+        ---------------------------------------------------------------------------------------------------------------->
+        <header>
+            <!-- -------------------------------------------------------
+            |           NAVBAR MENÚ HAMBURGUESA (RESPONSIVE)            |
+            |                                                           |
+            | El menu hamburguesa permite que los items del menú se     |
+            | contraigan en la vista móvil, usando un botón             |
+            ------------------------------------------------------------>
+            <!------------------------------------------------- Referentes -----------------------------------------------------
+              Clases                 |  Descripción
+              ----------------------   -----------------------------------------------------------------------------------------
+              container-fluid        |  Contenedor responsivo. Al usar "fluid" abarcara el 100% del ancho completo de la ventana                       
+              navbar-toggler         |  Es un botón que permite activar y mostrar el contenido colapsado del menú de navegación                      
+              navbar-collapse        |  Se usa para agrupar y ocultar el contenido de la barra de navegación
+              ----------------------------------------------------------------------------------------------------------------->
+            <nav class="navbar navbar-expand-lg">
+                <!-- Subcontenedor del navbar 
+                    * container-fluid  :  Contenedor responsivo. Al usar "fluid" abarcara el 100% del ancho completo de la ventana -->
+                <div class="container-fluid mb-1">
+                    <!-- Logo del navbar -->
+                    <a class="navbar-brand" href="#">
+                        <img
+                            src="img/icons/navbar-brand.png"
+                            width="30"
+                            height="30"
+                            alt=""
+                        />
+                    </a>
+
+                    <!-- Botón del navbar
+                        * data-target  :  Id del contenedor que se desea mostrar u ocultar -->
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarID"
+                        aria-controls="navbarID"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Items del navbar -->
+                    <div
+                        class="collapse navbar-collapse justify-content-center"
+                        id="navbarID"
+                    >
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section-activities"
+                                    >Actividades</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section-galery"
+                                    >Galería</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section-testimony"
+                                    >Testimonios</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact-section"
+                                    >Contacto</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section-group"
+                                    >Equipo</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#section-questions"
+                                    >Preguntas</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- -------------------------------------------------------
+            |                     PARALLAX DE FONDO                     |
+            |                                                           |
+            | Son varias capas de imágenes sobrepuestas que le dan un   |
+            | efecto de profundidad al scrollear la página              |
+            ------------------------------------------------------------>
+            <!-- Titulo grande -->
+            <h1 class="big-title translate" data-speed="0.1">Amazonas.</h1>
+
+            <!-- Imágenes del parallax 
+                 * data-speed  :  Es un atributo, usado en el archivo "parallax.js".Permite que cada imágen del header, se mueva a una velocidad diferente comparado con otros elementos -->
+            <img
+                src="img/parallax/person.png"
+                class="person translate"
+                data-speed="-0.25"
+                alt=""
+            />
+            <img
+                src="img/parallax/mountain1.png"
+                class="mountain1 translate"
+                data-speed="-0.2"
+                alt=""
+            />
+            <img
+                src="img/parallax/mountain2.png"
+                class="mountain2 translate"
+                data-speed="0.4"
+                alt=""
+            />
+            <img
+                src="img/parallax/mountain3.png"
+                class="mountain3 translate"
+                data-speed="0.3"
+                alt=""
+            />
+            <img
+                src="img/parallax/sky.png"
+                class="sky translate"
+                data-speed="0.5"
+                alt=""
+            />
+        </header>
+
+        <!--------------------------------------------------------------------------------------------------------------- 
+                                           Contenido principal de la página
+        ---------------------------------------------------------------------------------------------------------------->
+        <main>
+            <!-- --------------------------------------------------------
+            |  1)          PRESENTACIÓN DE LA PÁGINA                    |
+            ------------------------------------------------------------>
+            <section
+                class="section-presentation-page"
+                id="section-presentation-page"
+            >
+                <!-- Separador (sombra) -->
+                <div class="shadow"></div>
+
+                <!-- Contenedor
+                    * Contiene el título, descripción e imágen referente al tema -->
+                <div class="container opacity">
+                    <!-- Contenedor div que organiza los elementos en filas con el uso de la clase (row) de bootstrap-->
+                    <div class="row align-items-center">
+                        <!-- Columna 1-->
+                        <div
+                            class="col-sm flex-md-row d-flex align-items-center"
+                            style="min-width: 280px"
+                        >
+                            <div class="content opacity">
+                                <!-- Título y descripción de la sección-->
+                                <h3 class="title">
+                                    Presentación
+                                    <div class="border"></div>
+                                </h3>
+
+                                <p class="text">
+                                    Bienvenido a nuestra página web dedicada al
+                                    majestuoso Amazonas, el pulmón del mundo y
+                                    uno de los ecosistemas más diversos y
+                                    fascinantes del planeta. Aquí encontrarás
+                                    una experiencia inmersiva que te permitirá
+                                    explorar la selva amazónica a través de
+                                    impactantes fotografías, información
+                                    detallada sobre su flora y fauna, la riqueza
+                                    cultural de las comunidades indígenas, y los
+                                    desafíos ambientales que enfrenta esta
+                                    región
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Columna 2-->
+                        <div
+                            class="col-sm col_img-presentation_page"
+                            style="padding-left: 30px; padding-right: 30px"
+                        >
+                            <div class="imgContainer opacity">
+                                <!-- <img src="img/secciones/frame1.jpg" alt=""> -->
+                                <div class="box">
+                                    <div class="imgBx">
+                                        <img
+                                            src="img/secciones/frame1.jpg"
+                                            style="border-radius: 20px"
+                                            alt=""
+                                        />
+                                    </div>
+
+                                    <div class="contentBx">
+                                        <h4 style="color: black">Guacamayos</h4>
+                                        <p>
+                                            Los guacamayos son aves coloridas y
+                                            de gran tamaño pertenecientes a la
+                                            familia de los loros (Psittacidae).
+                                            Se encuentran principalmente en las
+                                            selvas tropicales de América Central
+                                            y del Sur
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --------------------------------------------------------
+            |  2)   Actividades                                         |
+            ------------------------------------------------------------>
+            <section>
+                <div
+                    class="separator separator___section-activities d-flex flex-column justify-content-center align-items-center"
+                    style="padding-bottom: 300px"
+                >
+                    <h2>Actividades disponibles</h2>
+                    <p>
+                        El Amazonas, la selva tropical más grande y biodiversa
+                        del mundo, es un ecosistema vital que abarca partes de
+                        nueve países sudamericanos, principalmente Brasil y
+                        Perú. Esta región, rica en flora y fauna únicas,
+                        desempeña un papel crucial en la regulación del clima
+                        global, siendo uno de los principales sumideros de
+                        carbono del planeta. Sin embargo, más allá de su
+                        importancia ecológica, el Amazonas es también un lugar
+                        de intensa actividad humana, tanto sostenible como
+                        destructiva. La región amazónica ofrece una gran
+                        variedad de actividades para los visitantes y
+                        residentes. Descubrelas hechandole un vistazo a esta
+                        sección.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section-activities" id="section-activities">
+                <!-- Contenedor div que contiene todos los elementos de esta sección-->
+                <div class="container">
+                    <!-- Cards Bootstrap -->
+
+                    <div
+                        class="container card_container-section-activities mt-5"
+                    >
+                        <!-- Primera fila -->
+                        <div
+                            class="row d-flex justify-content-center column-gap-5"
+                        >
+                            <!-- Card 1 -->
+                            <div
+                                class="box col-sm-5 col-md-5 d-flex justify-content-center"
+                            >
+                                <div class="imgBx">
+                                    <img
+                                        src="img/secciones/act-card1.jpg"
+                                        style="border-radius: 20px; width: 100%"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <div class="contentBx">
+                                    <h4 style="color: black">Guacamayos</h4>
+                                    <p style="color: black">
+                                        Los guacamayos son aves coloridas y de
+                                        gran tamaño pertenecientes a la familia
+                                        de los loros (Psittacidae). Se
+                                        encuentran principalmente en las selvas
+                                        tropicales de América Central y del Sur
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div
+                                class="box col-12 col-sm-5 col-md-5 d-flex justify-content-center"
+                            >
+                                <div class="imgBx">
+                                    <img
+                                        src="img/secciones/act-card2.jpg"
+                                        style="border-radius: 20px; width: 100%"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <div class="contentBx">
+                                    <h4 style="color: black">
+                                        Navegación por los ríos
+                                    </h4>
+                                    <p style="color: black">
+                                        Paseos en canoa o barco para explorar la
+                                        red fluvial amazónica.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div
+                                class="box col-12 col-sm-5 col-md-5 d-flex justify-content-center"
+                            >
+                                <div class="imgBx">
+                                    <img
+                                        src="img/secciones/act-card3.jpg"
+                                        style="border-radius: 20px; width: 100%"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <div class="contentBx">
+                                    <h4 style="color: black">
+                                        Observación de vida silvestre
+                                    </h4>
+                                    <p style="color: black">
+                                        Avistamiento de especies como monos,
+                                        aves exóticas, delfines rosados,
+                                        caimanes, entre otros.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div
+                                class="box col-12 col-sm-5 col-md-5 d-flex justify-content-center"
+                            >
+                                <div class="imgBx">
+                                    <img
+                                        src="img/secciones/act-card3.jpg"
+                                        style="border-radius: 20px; width: 100%"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <div class="contentBx">
+                                    <h4 style="color: black">
+                                        Observación de vida silvestre
+                                    </h4>
+                                    <p style="color: black">
+                                        Avistamiento de especies como monos,
+                                        aves exóticas, delfines rosados,
+                                        caimanes, entre otros.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Segunda fila -->
+                        <div
+                            class="row d-flex justify-content-center column-gap-5"
+                        >
+                            <!-- Card 4 -->
+                            <div
+                                class="box mb-4 col-12 col-sm-5 col-md-5 d-flex justify-content-center"
+                            >
+                                <div class="imgBx">
+                                    <img
+                                        src="img/secciones/act-card5.jpg"
+                                        style="border-radius: 20px; width: 100%"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <div class="contentBx">
+                                    <h4 style="color: black">
+                                        Visitas a comunidades indígenas
+                                    </h4>
+                                    <p style="color: black">
+                                        Conocer las culturas tradicionales y
+                                        aprender sobre sus costumbres y forma de
+                                        vida.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Card 5 -->
+                            <div
+                                class="box mb-4 col-12 col-sm-5 col-md-5 d-flex justify-content-center"
+                            >
+                                <div class="imgBx">
+                                    <img
+                                        src="img/secciones/act-card6.jpg"
+                                        style="border-radius: 20px; width: 100%"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <div class="contentBx">
+                                    <h4 style="color: black">
+                                        Pesca deportiva
+                                    </h4>
+                                    <p style="color: black">
+                                        Practicar la pesca de especies como el
+                                        pirarucú o el tucunaré.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Card 6 -->
+                            <div
+                                class="box mb-4 col-12 col-sm-5 col-md-5 d-flex justify-content-center"
+                            >
+                                <div class="imgBx">
+                                    <img
+                                        src="img/secciones/act-card7.jpg"
+                                        style="border-radius: 20px; width: 100%"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <div class="contentBx">
+                                    <h4 style="color: black">
+                                        Camping y turismo de aventura
+                                    </h4>
+                                    <p style="color: black">
+                                        Acampar en la selva y participar en
+                                        actividades como tirolesa o senderismo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contenedor que contiene la introducción e imágen del tema-->
+                    <div class="container introduction_section-activities">
+                        <!-- Fila (row) que alinea los elementos al centro (align-items-center)-->
+                        <div class="row align-items-center">
+                            <!-- Este contenedor agrupa los elementos que componen la imagen de la introducción -->
+                            <div class="col-sm col_img-presentation_page">
+                                <div
+                                    class="container container_img-presentation_page"
+                                >
+                                    <div
+                                        class="col_img-presentation_page col--1"
+                                    >
+                                        <div class="item item--1"></div>
+                                        <div class="item item--2"></div>
+                                        <div class="item item--3"></div>
+                                    </div>
+                                    <div
+                                        class="col_img-presentation_page col--2"
+                                    >
+                                        <div class="item item--1"></div>
+                                        <div class="item item--2"></div>
+                                        <div class="item item--3"></div>
+                                    </div>
+                                    <div
+                                        class="col_img-presentation_page col--3"
+                                    >
+                                        <div class="item item--1"></div>
+                                        <div class="item item--2"></div>
+                                        <div class="item item--3"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Este contenedor es una columna que contiene la introducción -->
+                            <div class="col-sm d-flex align-items-center p-0">
+                                <div class="container">
+                                    <p
+                                        class="paragraph-section-activities mt-5"
+                                    >
+                                        Es importante mencionar que todas estas
+                                        actividades deben realizarse con un
+                                        profundo respeto por el entorno natural
+                                        y las culturas locales. El ecoturismo
+                                        responsable y las prácticas sostenibles
+                                        son fundamentales para preservar la
+                                        integridad de la Amazonía para las
+                                        generaciones futuras. En resumen, la
+                                        región amazónica ofrece un abanico de
+                                        experiencias que van desde la aventura y
+                                        la exploración hasta el enriquecimiento
+                                        cultural y científico. Cada actividad
+                                        proporciona una perspectiva única de
+                                        este ecosistema vital, permitiendo a las
+                                        personas no solo maravillarse con su
+                                        belleza y complejidad, sino también
+                                        comprender la importancia crucial de su
+                                        conservación para el planeta entero.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --------------------------------------------------------
+            |  3)                   GALERÍA FOTOS                       |
+            ------------------------------------------------------------>
+            <section>
+                <div
+                    class="separator separator___section-galery d-flex flex-column justify-content-center align-items-center"
+                    style="padding-bottom: 200px"
+                >
+                    <h2>Galería de fotos</h2>
+                    <p>
+                        Bienvenido a nuestra galería de fotos de la Amazonía, un
+                        espacio visual diseñado para llevarte al corazón de la
+                        selva tropical más biodiversa del mundo. Aquí podrás
+                        admirar una colección impresionante de imágenes que
+                        capturan la rica fauna y flora del Amazonas, desde los
+                        majestuosos jaguares y coloridos guacamayos hasta las
+                        plantas exóticas y paisajes llenos de vida. <br />
+                        Cada fotografía cuenta una historia única sobre los
+                        fascinantes animales que habitan este ecosistema y la
+                        vegetación exuberante que los rodea. Sumérgete en esta
+                        aventura visual y descubre la increíble biodiversidad
+                        que hace del Amazonas un tesoro natural incomparable.
+                    </p>
+                    <div class="container mt-5">
+                        <div class="row d-flex justify-content-center">
+                            <div
+                                class="col-12 col-sm-5 col-md-3 d-flex justify-content-center"
+                            >
+                                <img
+                                    src="https://c.files.bbci.co.uk/F987/production/_110697836_promo_2_amazonas.png"
+                                    alt="Imagen 1"
+                                    class="rounded-circle gallery-img"
+                                />
+                            </div>
+                            <div
+                                class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                            >
+                                <img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4SgqFaZhos4nyZ2B8ByeS7Jp8Ekga_sTzpA&s"
+                                    alt="Imagen 2"
+                                    class="rounded-circle gallery-img"
+                                />
+                            </div>
+                            <div
+                                class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                            >
+                                <img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKSmWa6N9EdMwe7mXsXpFC_yy-qh6u-zajfw&s"
+                                    alt="Imagen 3"
+                                    class="rounded-circle gallery-img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-galery" id="section-galery">
+                <!-- Contenedor div que contiene todos los elementos de esta sección-->
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://c.files.bbci.co.uk/F987/production/_110697836_promo_2_amazonas.png"
+                                alt="Imagen 1"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4SgqFaZhos4nyZ2B8ByeS7Jp8Ekga_sTzpA&s"
+                                alt="Imagen 2"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKSmWa6N9EdMwe7mXsXpFC_yy-qh6u-zajfw&s"
+                                alt="Imagen 3"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPj-U5LaqDNn1x0J_3L6UaVJOM26jbHGuXqg&s"
+                                alt="Imagen 4"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPj-U5LaqDNn1x0J_3L6UaVJOM26jbHGuXqg&s"
+                                alt="Imagen 4"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlskqkxsUQfdAG3Lys7Z7kCFRxR-0QeaSUsA&s"
+                                alt="Imagen 5"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://animalesdecolombia.com.co/wp-content/uploads/2023/03/Delfin-Rosado-Amazonia.jpg"
+                                alt="Imagen 5"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPj-U5LaqDNn1x0J_3L6UaVJOM26jbHGuXqg&s"
+                                alt="Imagen 4"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://www.fundacionaquae.org/wp-content/uploads/2016/05/amazonia-1.jpg"
+                                alt="Imagen 7"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4SgqFaZhos4nyZ2B8ByeS7Jp8Ekga_sTzpA&s"
+                                alt="Imagen 2"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://animalesdecolombia.com.co/wp-content/uploads/2023/03/Iguana-Iguana-del-amazonas.jpg"
+                                alt="Imagen 8"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPj-U5LaqDNn1x0J_3L6UaVJOM26jbHGuXqg&s"
+                                alt="Imagen 4"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPj-U5LaqDNn1x0J_3L6UaVJOM26jbHGuXqg&s"
+                                alt="Imagen 4"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                        <div
+                            class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
+                        >
+                            <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPj-U5LaqDNn1x0J_3L6UaVJOM26jbHGuXqg&s"
+                                alt="Imagen 4"
+                                class="rounded-circle gallery-img"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --------------------------------------------------------
+            |  4)    Testimonios y reseñas                              |
+            ------------------------------------------------------------>
+            <section>
+                <div
+                    class="separator separator___section-testimony d-flex flex-column justify-content-center align-items-center"
+                    style="height: 700px"
+                >
+                    <h2>Testimonios y reseñas</h2>
+                    <p>Conoce las opiniones de algunos visitantes</p>
+                </div>
+
+                <section class="section-testimony" id="section-testimony">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center">
+                            <!-- Primera columna -->
+                            <div
+                                class="col-12 col-md-4 d-flex justify-content-center mb-4"
+                            >
+                                <div class="testimony-card">
+                                    <img
+                                        src="https://preview.redd.it/what-makes-artbreeder-faces-so-attractive-v0-3ccjugmblwqa1.jpg?width=768&format=pjpg&auto=webp&s=522024c4593e9e5bdb56ea43e28b85db0f8ac0a1"
+                                        alt="Persona 1"
+                                        class="testimony-img"
+                                    />
+                                    <p class="testimony-name">Juan Pérez</p>
+                                    <p class="testimony-text">
+                                        "Esta plataforma ha transformado mi
+                                        manera de trabajar. La recomiendo sin
+                                        dudarlo."
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Segunda columna -->
+                            <div
+                                class="col-12 col-md-4 d-flex justify-content-center mb-4"
+                            >
+                                <div class="testimony-card">
+                                    <img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkZB9IBgpoCetfmmFvfGxMpcD7-F8v3ucJsw&s"
+                                        alt="Persona 2"
+                                        class="testimony-img"
+                                    />
+                                    <p class="testimony-name">María García</p>
+                                    <p class="testimony-text">
+                                        "Excelente experiencia. El soporte al
+                                        cliente es rápido y siempre dispuesto a
+                                        ayudar."
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Tercera columna -->
+                            <div
+                                class="col-12 col-md-4 d-flex justify-content-center mb-4"
+                            >
+                                <div class="testimony-card">
+                                    <img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxMzkdUV-JQxB68TbKJww27j6Jzaqp5M2gCQ&s"
+                                        alt="Persona 3"
+                                        class="testimony-img"
+                                    />
+                                    <p class="testimony-name">Carlos López</p>
+                                    <p class="testimony-text">
+                                        "La calidad del servicio es
+                                        impresionante. Definitivamente volveré a
+                                        usarlo."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- --------------------------------------------------------
+            |  5)    Contacto                                           |
+            ------------------------------------------------------------>
+            <section>
+                <div
+                    class="separator separator___section-contact d-flex flex-column justify-content-center align-items-center"
+                    style="height: 700px"
+                >
+                    <h2>Contacto</h2>
+                    <p>Información de contacto</p>
+                </div>
+            </section>
+
+            <section class="contact-section" id="contact-section">
+                <div class="container">
+                    <!-- Información de la empresa -->
+                    <div class="company-info">
+                        <p>
+                            <strong>Dirección:</strong> Calle Ficticia 123,
+                            Calí, Colombia
+                        </p>
+                        <p><strong>Teléfono:</strong> +123 456 7890</p>
+                        <p><strong>Email:</strong> contacto@empresa.com</p>
+                    </div>
+
+                    <!-- Redes Sociales -->
+                    <div class="social-media">
+                        <p>Síguenos en nuestras redes sociales:</p>
+                        <ul>
+                            <a href="#" class="footer___social"
+                                ><img
+                                    src="img/icons/facebook.svg"
+                                    alt="facebook"
+                            /></a>
+                            <a href="#" class="footer___social"
+                                ><img
+                                    src="img/icons/instagram.svg"
+                                    alt="instagram"
+                            /></a>
+                            <a href="#" class="footer___social"
+                                ><img
+                                    src="img/icons/whatsapp.svg"
+                                    alt="whatsapp"
+                            /></a>
+                            <a href="#" class="footer___social"
+                                ><img src="img/icons/x.svg" alt="x"
+                            /></a>
+                            <a href="#" class="footer___social"
+                                ><img
+                                    src="img/icons/telegram.svg"
+                                    alt="telegram"
+                            /></a>
+                            <a href="#" class="footer___social"
+                                ><img src="img/icons/youtube.svg" alt="youtube"
+                            /></a>
+                            <a href="#" class="footer___social"
+                                ><img src="img/icons/tiktok.svg" alt="tiktok"
+                            /></a>
+                        </ul>
+                    </div>
+
+                    <!-- Formulario de Contacto -->
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name" style="color: white"
+                                >Nombre:</label
+                            >
+                            <input type="text" id="name" name="name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email" style="color: white"
+                                >Email:</label
+                            >
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="message" style="color: white"
+                                >Mensaje:</label
+                            >
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                required
+                            ></textarea>
+                        </div>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- --------------------------------------------------------
+            |  6)    Grupo                                           |
+            ------------------------------------------------------------>
+            <section>
+                <div
+                    class="separator separator___section-grupo d-flex flex-column justify-content-center align-items-center"
+                    style="height: 700px"
+                >
+                    <h2>Grupo</h2>
+                    <p>Conoce a nuestro equipo de trabajo</p>
+                </div>
+            </section>
+
+            <section class="section-group" id="section-group">
+                <div class="container">
+                    <div class="row">
+                        <!-- Card 1 -->
+                        <div class="col-md-4">
+                            <div
+                                class="card card-custom"
+                                onclick="window.location.href='jhonatan.html'"
+                            >
+                                <img
+                                    src="https://t4.ftcdn.net/jpg/00/80/88/07/360_F_80880713_OcQ2DSBVym3Dm5G4MPtIPrKN1TrCsJF7.jpg"
+                                    class="card-img-top"
+                                    alt="Descripción de la imagen 1"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Jhonatan Pérez</h5>
+                                    <p class="card-text">
+                                        Estudiante de la UNIAJC
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="col-md-4">
+                            <div
+                                class="card card-custom"
+                                onclick="window.location.href='juan.html'"
+                            >
+                                <img
+                                    src="https://t4.ftcdn.net/jpg/00/80/88/07/360_F_80880713_OcQ2DSBVym3Dm5G4MPtIPrKN1TrCsJF7.jpg"
+                                    class="card-img-top"
+                                    alt="Descripción de la imagen 2"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Juan Mosquera</h5>
+                                    <p class="card-text">
+                                        Estudiante de la UNIAJC
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col-md-4">
+                            <div
+                                class="card card-custom"
+                                onclick="window.location.href='Darwin.html'"
+                            >
+                                <img
+                                    src="https://t4.ftcdn.net/jpg/00/80/88/07/360_F_80880713_OcQ2DSBVym3Dm5G4MPtIPrKN1TrCsJF7.jpg"
+                                    class="card-img-top"
+                                    alt="Descripción de la imagen 3"
+                                />
+                                <div class="card-body">
+                                    <h5 class="card-title">Darwin Alberto</h5>
+                                    <p class="card-text">
+                                        Estudiante de la UNIAJC
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --------------------------------------------------------
+        |  7)    Preguntas                                           |
+        ------------------------------------------------------------>
+            <section>
+                <div
+                    class="separator separator___section-preguntas d-flex flex-column justify-content-center align-items-center"
+                    style="height: 700px"
+                >
+                    <h2>Preguntas frecuentes</h2>
+                    <p>Tienes dudas?</p>
+                </div>
+            </section>
+
+            <section class="preguntas" id="section-questions">
+                <div class="container">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- Pregunta 1 -->
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button
+                                        class="btn btn-link faq-title"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#collapseOne"
+                                        aria-expanded="true"
+                                        aria-controls="collapseOne"
+                                    >
+                                        ¿Cuál es la mejor época para visitar el
+                                        Amazonas?
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div
+                                id="collapseOne"
+                                class="collapse show"
+                                aria-labelledby="headingOne"
+                                data-parent="#faqAccordion"
+                            >
+                                <div
+                                    class="card-body d-flex flex-row gap-3 align-items-center"
+                                >
+                                    <div>
+                                        <img
+                                            src="https://cdn.pixabay.com/photo/2022/10/21/14/29/calendar-7537223_960_720.jpg"
+                                            alt="Río Amazonas durante la estación seca en Perú"
+                                            style="
+                                                max-width: 150px;
+                                                border-radius: 10px;
+                                                box-shadow: 0 2px 8px
+                                                    rgba(0, 0, 0, 0.1);
+                                            "
+                                        />
+                                    </div>
+                                    <div>
+                                        La mejor época para visitar el Amazonas
+                                        es durante la estación seca, que va de
+                                        junio a noviembre, ya que las
+                                        condiciones son más favorables para
+                                        realizar actividades al aire libre.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button
+                                        class="btn btn-link collapsed faq-title"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#collapseTwo"
+                                        aria-expanded="false"
+                                        aria-controls="collapseTwo"
+                                    >
+                                        ¿Qué actividades se pueden realizar en
+                                        el Amazonas?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div
+                                id="collapseTwo"
+                                class="collapse"
+                                aria-labelledby="headingTwo"
+                                data-parent="#faqAccordion"
+                            >
+                                <div class="card-body">
+                                    En el Amazonas puedes disfrutar de
+                                    actividades como el senderismo, paseos en
+                                    canoa, avistamiento de aves y fauna
+                                    silvestre, y visitas a comunidades
+                                    indígenas.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 3 -->
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button
+                                        class="btn btn-link collapsed faq-title"
+                                        type="button"
+                                        data-toggle="collapse"
+                                        data-target="#collapseThree"
+                                        aria-expanded="false"
+                                        aria-controls="collapseThree"
+                                    >
+                                        ¿Qué debo llevar para una visita al
+                                        Amazonas?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div
+                                id="collapseThree"
+                                class="collapse"
+                                aria-labelledby="headingThree"
+                                data-parent="#faqAccordion"
+                            >
+                                <div class="card-body">
+                                    Te recomendamos llevar ropa ligera,
+                                    repelente de insectos, protector solar,
+                                    botas de agua, y una mochila resistente al
+                                    agua para proteger tus pertenencias.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- -------------------------------------------------------
+        |                           FOOTER                          |
+        ------------------------------------------------------------>
+        <footer class="footer text-center text-lg-start">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Turismo amazónico</h5>
+                    </div>
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Síguenos</h5>
+                        <a href="#" class="footer___social"
+                            ><img src="img/icons/facebook.svg" alt="facebook"
+                        /></a>
+                        <a href="#" class="footer___social"
+                            ><img src="img/icons/instagram.svg" alt="instagram"
+                        /></a>
+                        <a href="#" class="footer___social"
+                            ><img src="img/icons/whatsapp.svg" alt="whatsapp"
+                        /></a>
+                        <a href="#" class="footer___social"
+                            ><img src="img/icons/x.svg" alt="x"
+                        /></a>
+                        <a href="#" class="footer___social"
+                            ><img src="img/icons/telegram.svg" alt="telegram"
+                        /></a>
+                        <a href="#" class="footer___social"
+                            ><img src="img/icons/youtube.svg" alt="youtube"
+                        /></a>
+                        <a href="#" class="footer___social"
+                            ><img src="img/icons/tiktok.svg" alt="tiktok"
+                        /></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!---------- Scripts ------------------------------------------------------------------>
+        <!-- Estos scripts se colocan al final de la página justo despues de cargarse todos los elementos,
+        de lo contrario si se colocan en el head no funcionan porque no ha inicialziado el DOM que contiene la estructura de la página -->
+        <script src="/js/parallax.js"></script>
+        <script src="/js/scrollbar.js"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+            integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+        <script type="text/javascript" src="vanilla-tilt.js"></script>
+        <script type="text/javascript">
+            VanillaTilt.init(document.querySelectorAll(".box"), {
+                max: 25,
+                speed: 400,
+            });
+        </script>
+    </body>
+</html>

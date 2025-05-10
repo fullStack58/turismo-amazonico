@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida</title>
+    <!-- Enlace de Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-image: url('https://cdn.pixabay.com/photo/2024/05/05/07/41/lizard-8740424_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            padding-bottom: 100px;
+        }
+        .table{
+            background-color: #9ac5a1;
+            color: #172027;
+        }
+        .table-custom {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            box-shadow: rgba(64, 139, 70, 0.15) 0px 48px 100px 0px;
+        }
+        .table-custom thead {
+            background-color: #152b18;
+            color: white;
+        }
+        .table-custom tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .table-custom th, .table-custom td {
+            padding: 12px;
+            text-align: left;
+        }
+        .btn-back {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-back:hover {
+            background-color: #b9b9b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center my-4">Hoja de Vida</h1>
+        
+        <!-- Tabla con información personal -->
+        <table class="table table-bordered table-custom">
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Darwin Alberto</td>
+                </tr>
+                <tr>
+                    <td>C.C.</td>
+                    <td>1234567890</td>
+                </tr>
+                <tr>
+                    <td>Correo</td>
+                    <td>darwinalberto@example.com</td>
+                </tr>
+                <tr>
+                    <td>Edad</td>
+                    <td>25 años</td>
+                </tr>
+                <tr>
+                    <td>Carrera</td>
+                    <td>Estudiante de Ingeniería Electrónica</td>
+                </tr>
+                <tr>
+                    <td>Hobbies</td>
+                    <td>• Leer libros, practicar deportes, y tocar guitarra</td>
+                </tr>
+                <tr>
+                    <td>Universidad</td>
+                    <td>Universidad Nacional</td>
+                </tr>
+                <tr>
+                    <td>Estudios</td>
+                    <td>Carrera actual: Ingeniería Electrónica, Universidad Nacional<br></td>
+                </tr>
+                <tr>
+                    <td>Conocimientos técnicos</td>
+                    <td>• Lenguajes de programación: C++, Python.<br>
+                        • Bases de datos: PostgreSQL, MongoDB.<br>
+                        • Sistemas operativos: Experiencia con Linux y Windows<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Conocimientos Técnicos</td>
+                    <td>Programación en C++, HTML, CSS, JavaScript, manejo de bases de datos</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Botón para regresar -->
+        <div class="text-center">
+            <a href="/index.html#section-group" class="btn-back">Regresar</a>
+        </div>
+    </div>
+
+    <!-- Enlace de Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
