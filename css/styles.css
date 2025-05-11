@@ -1,3 +1,17 @@
+.containercito {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.boxito {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 90%; /* Centrado en el eje Y */
+    transform: translateY(-50%);
+}
+
 /* ------------------------------------------------------------------------ 
                                  Fuentes 
 ------------------------------------------------------------------------ */
@@ -28,6 +42,7 @@ Clases que afectaran la apariencia de toda la página
     background-size: 66px 66px;
     background-position: 0 0, 33px 33px;
     min-width: 530px;
+    margin: 0;
 }
 
 /*selecciona el elemento raíz de un árbol que 
@@ -45,6 +60,18 @@ recursividad*/
     --img2-1: url("../img/secciones/frame4.jpg");
     --img2-2: url("../img/secciones/frame2.jpg");
     --img2-3: url("../img/secciones/frame6.jpg");
+}
+
+@media (min-width: 769px) {
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: 1.3rem;
+    }
 }
 
 /* ------------------------------------------------------------------------ 
@@ -95,23 +122,34 @@ recursividad*/
     color: #ff7e27;
 }
 
+@media (min-width: 769px) {
+    .navbar .nav-link {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-link {
+        font-size: 1.4rem;
+    }
+}
+
 /* ------------------------------------------------------------------------ 
                                  Footer 
 ------------------------------------------------------------------------ */
 
 /*Cambiar fondo y padding*/
 .footer {
-    box-shadow: rgb(14 93 67) 0px 10px 36px 0px,
-        rgb(7 32 45 / 67%) 0px 0px 0px 1px;
+    box-shadow: rgb(6 6 6) 0px 10px 36px 0px, rgb(0 0 0 / 67%) 0px 0px 0px 1px;
     padding-top: 50px;
     padding-bottom: 100px;
     background-image: linear-gradient(
         to right top,
-        #0b182a,
-        #161c2a,
-        #1e2029,
-        #242429,
-        #292929
+        #000000,
+        #0f0f10,
+        #131314,
+        #080808,
+        #080808
     );
 }
 
@@ -290,20 +328,20 @@ header {
     background-image: linear-gradient(
             180deg,
             rgba(21, 21, 21, 1) 7%,
-            rgba(14, 102, 49, 0.76) 21%,
+            rgba(23, 29, 25, 0.76) 21%,
             rgba(6, 19, 6, 0.21) 65%,
             rgba(255, 255, 255, 0.35) 93%,
             rgba(9, 10, 9, 1) 98%
         ),
-        url("https://cdn.pixabay.com/photo/2023/09/13/15/41/mountain-8251186_1280.jpg");
+        url("../img/fondos/mountain.jpg");
     mask-image: radial-gradient(
         circle,
-        rgb(0, 0, 0) 70%,
+        rgb(0, 0, 0) 90%,
         rgba(0, 0, 0, 0) 100%
     );
     -webkit-mask-image: radial-gradient(
         circle,
-        rgba(0, 0, 0, 1) 40%,
+        rgba(0, 0, 0, 1) 60%,
         rgba(0, 0, 0, 0) 100%
     );
     mask-size: auto auto;
@@ -519,7 +557,8 @@ div.container.card_container-section-activities {
 
 @media (max-width: 575px) {
     div.container.card_container-section-activities {
-        padding: 140px;
+        padding-left: 100px;
+        padding-right: 100px;
     }
 }
 
@@ -562,16 +601,6 @@ div.container.card_container-section-activities {
 }
 
 .section-galery {
-    background-image: linear-gradient(
-            169deg,
-            rgba(9, 10, 9, 1) 42%,
-            rgba(0, 0, 0, 1) 45%,
-            rgba(20, 20, 20, 0.54) 55%,
-            rgba(255, 255, 255, 0.05) 66%,
-            rgba(9, 10, 9, 0.23) 67%,
-            rgba(9, 10, 9, 1) 80%
-        ),
-        url("https://images.unsplash.com/photo-1727621170067-93835ec80018?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
@@ -670,7 +699,7 @@ div.container.card_container-section-activities {
     padding: 20px;
     border-radius: 40px;
     text-align: center;
-    background: linear-gradient(135deg, #33573e, #0a2f29);
+    background: linear-gradient(135deg, #09110b, #16201f);
     display: flex;
     color: #99d9be;
     flex-direction: column;
@@ -707,7 +736,7 @@ div.container.card_container-section-activities {
             rgba(9, 10, 9, 0.44) 35%,
             rgba(9, 10, 9, 1) 81%
         ),
-        url("https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        url("../img/fondos/computer.jpg");
     -webkit-mask-image: radial-gradient(
         circle,
         rgb(0, 0, 0) 70%,
@@ -728,6 +757,10 @@ div.container.card_container-section-activities {
 .contact-section {
     padding: 20px;
     background-color: #090a09;
+}
+
+.contact-section .container {
+    transform: translateY(-200px);
 }
 
 .label {
@@ -810,7 +843,7 @@ input {
             rgba(9, 10, 9, 0.44) 35%,
             rgba(9, 10, 9, 1) 81%
         ),
-        url("https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        url("../img/fondos/equipo.jpg");
     -webkit-mask-image: radial-gradient(
         circle,
         rgb(0, 0, 0) 70%,
@@ -865,7 +898,7 @@ input {
             rgba(9, 10, 9, 0.44) 35%,
             rgba(9, 10, 9, 1) 81%
         ),
-        url("https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        url("../img/fondos/mountain2.jpg");
     -webkit-mask-image: radial-gradient(
         circle,
         rgb(0, 0, 0) 70%,
@@ -888,7 +921,9 @@ input {
     background-color: #090a09;
 }
 .preguntas .container {
-    transform: translateY(-210px);
+    transform: translateY(-180px);
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .preguntas .card {
@@ -1007,7 +1042,7 @@ Contenedores rotables (3d)
 }
 
 .box .imgBx img {
-    box-shadow: rgba(14, 231, 101, 0.25) 0px 54px 55px,
+    box-shadow: rgba(3, 44, 19, 0.25) 0px 54px 55px,
         rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(11, 19, 16, 0.12) 0px 4px 6px,
         rgb(30 95 66 / 17%) 0px 12px 13px, rgb(241 255 249 / 9%) 0px -3px 5px;
 }

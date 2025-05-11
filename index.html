@@ -8,7 +8,9 @@
         * content="width=device-width" (Iguala el ancho del viewport (la parte visible de la página) al ancho del dispositivo en el que se esta viendo la página)
         -------------------------------------->
         <meta charset="utf-8" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#FFFFFF" />
         <title>Turismo Amazónico</title>
 
         <!-------------------------------------
@@ -27,8 +29,11 @@
         <!-------------------------------------
         JS (SCRIPTS)
         * js/vanilla-tilt.js (librería para girar contenedores en 3D)
+        * GSAP + plugings
         -------------------------------------->
         <script src="vanilla-tilt.js"></script>
+        <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
     </head>
 
     <body class="body">
@@ -539,37 +544,6 @@
                         aventura visual y descubre la increíble biodiversidad
                         que hace del Amazonas un tesoro natural incomparable.
                     </p>
-                    <div class="container mt-5">
-                        <div class="row d-flex justify-content-center">
-                            <div
-                                class="col-12 col-sm-5 col-md-3 d-flex justify-content-center"
-                            >
-                                <img
-                                    src="https://c.files.bbci.co.uk/F987/production/_110697836_promo_2_amazonas.png"
-                                    alt="Imagen 1"
-                                    class="rounded-circle gallery-img"
-                                />
-                            </div>
-                            <div
-                                class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
-                            >
-                                <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4SgqFaZhos4nyZ2B8ByeS7Jp8Ekga_sTzpA&s"
-                                    alt="Imagen 2"
-                                    class="rounded-circle gallery-img"
-                                />
-                            </div>
-                            <div
-                                class="col-12 col-sm-5 col-md-3 d-flex justify-content-center mb-3"
-                            >
-                                <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKSmWa6N9EdMwe7mXsXpFC_yy-qh6u-zajfw&s"
-                                    alt="Imagen 3"
-                                    class="rounded-circle gallery-img"
-                                />
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -878,7 +852,7 @@
             </section>
 
             <!-- --------------------------------------------------------
-            |  6)    Grupo                                           |
+            |  6)    Grupo                                              |
             ------------------------------------------------------------>
             <section>
                 <div
@@ -957,8 +931,8 @@
             </section>
 
             <!-- --------------------------------------------------------
-        |  7)    Preguntas                                           |
-        ------------------------------------------------------------>
+            |  7)    Preguntas                                          |
+            ------------------------------------------------------------>
             <section>
                 <div
                     class="separator separator___section-preguntas d-flex flex-column justify-content-center align-items-center"
@@ -1012,11 +986,14 @@
                                         />
                                     </div>
                                     <div>
-                                        La mejor época para visitar el Amazonas
-                                        es durante la estación seca, que va de
-                                        junio a noviembre, ya que las
-                                        condiciones son más favorables para
-                                        realizar actividades al aire libre.
+                                        <p>
+                                            La mejor época para visitar el
+                                            Amazonas es durante la estación
+                                            seca, que va de junio a noviembre,
+                                            ya que las condiciones son más
+                                            favorables para realizar actividades
+                                            al aire libre.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -1027,11 +1004,11 @@
                             <div class="card-header" id="headingTwo">
                                 <h5 class="mb-0">
                                     <button
-                                        class="btn btn-link collapsed faq-title"
+                                        class="btn btn-link faq-title"
                                         type="button"
                                         data-toggle="collapse"
                                         data-target="#collapseTwo"
-                                        aria-expanded="false"
+                                        aria-expanded="true"
                                         aria-controls="collapseTwo"
                                     >
                                         ¿Qué actividades se pueden realizar en
@@ -1039,18 +1016,37 @@
                                     </button>
                                 </h5>
                             </div>
+
                             <div
                                 id="collapseTwo"
-                                class="collapse"
+                                class="collapse show"
                                 aria-labelledby="headingTwo"
                                 data-parent="#faqAccordion"
                             >
-                                <div class="card-body">
-                                    En el Amazonas puedes disfrutar de
-                                    actividades como el senderismo, paseos en
-                                    canoa, avistamiento de aves y fauna
-                                    silvestre, y visitas a comunidades
-                                    indígenas.
+                                <div
+                                    class="card-body d-flex flex-row gap-3 align-items-center"
+                                >
+                                    <div>
+                                        <img
+                                            src="https://cdn.pixabay.com/photo/2022/10/21/14/29/calendar-7537223_960_720.jpg"
+                                            alt="Río Amazonas durante la estación seca en Perú"
+                                            style="
+                                                max-width: 150px;
+                                                border-radius: 10px;
+                                                box-shadow: 0 2px 8px
+                                                    rgba(0, 0, 0, 0.1);
+                                            "
+                                        />
+                                    </div>
+                                    <div>
+                                        <p>
+                                            En el Amazonas puedes disfrutar de
+                                            actividades como el senderismo,
+                                            paseos en canoa, avistamiento de
+                                            aves y fauna silvestre, y visitas a
+                                            comunidades indígenas.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1078,17 +1074,43 @@
                                 aria-labelledby="headingThree"
                                 data-parent="#faqAccordion"
                             >
-                                <div class="card-body">
-                                    Te recomendamos llevar ropa ligera,
-                                    repelente de insectos, protector solar,
-                                    botas de agua, y una mochila resistente al
-                                    agua para proteger tus pertenencias.
+                                <div
+                                    class="card-body d-flex flex-row gap-3 align-items-center"
+                                >
+                                    <div>
+                                        <img
+                                            src="https://cdn.pixabay.com/photo/2022/10/21/14/29/calendar-7537223_960_720.jpg"
+                                            alt="Río Amazonas durante la estación seca en Perú"
+                                            style="
+                                                max-width: 150px;
+                                                border-radius: 10px;
+                                                box-shadow: 0 2px 8px
+                                                    rgba(0, 0, 0, 0.1);
+                                            "
+                                        />
+                                    </div>
+                                    <div class="card-body">
+                                        <p>
+                                            Te recomendamos llevar ropa ligera,
+                                            repelente de insectos, protector
+                                            solar, botas de agua, y una mochila
+                                            resistente al agua para proteger tus
+                                            pertenencias.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- -------------------------------------------------------
+            |                           GSAP TEST                       |
+            ------------------------------------------------------------>
+            <div class="containercito">
+                <div class="box"></div>
+            </div>
         </main>
         <!-- -------------------------------------------------------
         |                           FOOTER                          |
@@ -1147,6 +1169,36 @@
             VanillaTilt.init(document.querySelectorAll(".box"), {
                 max: 25,
                 speed: 400,
+            });
+        </script>
+        <script>
+            gsap.registerPlugin(ScrollTrigger); // Registrar el plugin de ScrollTrigger
+
+            // Crear la animación con scroll
+            /*gsap.to(".boxito", {
+                scrollTrigger: {
+                    trigger: ".boxito",
+                    start: "top 80%",
+                    end: "top 20%",
+                    scrub: true, // La animacion sigue el scroll suave
+                    markers: true, // Muestra marcadores para depurar (opcional)
+                },
+                x: 400, // Mover 400px hacia la derecha
+                rotation: 360, // Rotar 360 grados
+                duration: 2, // Duración de la animación (se ajusta automáticamente con scrub)
+            });*/
+
+            // Crear la animación
+            gsap.to(".boxito", {
+                x: 600, // Mover en el eje X
+                scrollTrigger: {
+                    trigger: ".containercito", // La sección que activa la animación
+                    start: "top top", // Inicia cuando el tope de la sección llega al tope de la pantalla
+                    end: "bottom top", // Termina cuando el fondo de la sección llega al tope
+                    scrub: true, // Suavizado en scroll
+                    pin: true, // Fija la sección mientras la animación ocurre
+                    markers: true, // Muestra marcadores para depurar (opcional)
+                },
             });
         </script>
     </body>
