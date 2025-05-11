@@ -1108,9 +1108,6 @@
             <!-- -------------------------------------------------------
             |                           GSAP TEST                       |
             ------------------------------------------------------------>
-            <div class="containercito">
-                <div class="box"></div>
-            </div>
         </main>
         <!-- -------------------------------------------------------
         |                           FOOTER                          |
@@ -1171,35 +1168,6 @@
                 speed: 400,
             });
         </script>
-        <script>
-            gsap.registerPlugin(ScrollTrigger); // Registrar el plugin de ScrollTrigger
-
-            // Crear la animación con scroll
-            /*gsap.to(".boxito", {
-                scrollTrigger: {
-                    trigger: ".boxito",
-                    start: "top 80%",
-                    end: "top 20%",
-                    scrub: true, // La animacion sigue el scroll suave
-                    markers: true, // Muestra marcadores para depurar (opcional)
-                },
-                x: 400, // Mover 400px hacia la derecha
-                rotation: 360, // Rotar 360 grados
-                duration: 2, // Duración de la animación (se ajusta automáticamente con scrub)
-            });*/
-
-            // Crear la animación
-            gsap.to(".boxito", {
-                x: 600, // Mover en el eje X
-                scrollTrigger: {
-                    trigger: ".containercito", // La sección que activa la animación
-                    start: "top top", // Inicia cuando el tope de la sección llega al tope de la pantalla
-                    end: "bottom top", // Termina cuando el fondo de la sección llega al tope
-                    scrub: true, // Suavizado en scroll
-                    pin: true, // Fija la sección mientras la animación ocurre
-                    markers: true, // Muestra marcadores para depurar (opcional)
-                },
-            });
-        </script>
+        <script></script>
     </body>
 </html>
